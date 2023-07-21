@@ -15,7 +15,7 @@ app.post("/",function(req,res)//to recieve data from post request
 {
     const query=req.body.cityName;
     const units = "metric";
-    https.get("https://api.openweathermap.org/data/2.5/weather?q="+query+"&appid=3e7ca3ae439fc76c58dcfcb3fdeca3fc&units="+units,function(response)
+    https.get("https://api.openweathermap.org/data/2.5/weather?q="+query+"&appid=<apikey>&units="+units,function(response)
     {
         console.log(response.statusCode+" New request");
         response.on("data",function(data) //data from response sent by url //When you make an HTTP request using https.get(), the response is received as a stream of data that arrives in multiple chunks.By registering the data event handler, you can accumulate the received data by appending each chunk to a variable, here data
